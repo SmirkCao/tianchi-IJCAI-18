@@ -284,7 +284,7 @@ if __name__ == "__main__":
       'len_item_category','len_item_property','len_predict_category_property'
       加了之后结果更差了
       ---
-      去掉one-hot编码
+      去掉one-hot编码da'te
       去掉one_hot之后就36个特征了
       ---
       调整了一下参数，然后到0.081805感觉妥妥的过拟合了
