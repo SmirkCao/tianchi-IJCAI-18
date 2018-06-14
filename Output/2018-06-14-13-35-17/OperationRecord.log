@@ -1,0 +1,264 @@
+2018-06-14 13:35:17,636 - CTR - INFO - Start to run code...
+2018-06-14 13:35:17,636 - CTR - INFO - Load train dataset to all_data.
+2018-06-14 13:35:27,212 - CTR - INFO - all_data dataset shape : (478138, 27)
+2018-06-14 13:35:27,212 - CTR - INFO - all_data data have 27 columns
+ ['instance_id', 'item_id', 'item_category_list', 'item_property_list', 'item_brand_id', 'item_city_id', 'item_price_level', 'item_sales_level', 'item_collected_level', 'item_pv_level', 'user_id', 'user_gender_id', 'user_age_level', 'user_occupation_id', 'user_star_level', 'context_id', 'context_timestamp', 'context_page_id', 'predict_category_property', 'shop_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_star_level', 'shop_score_service', 'shop_score_delivery', 'shop_score_description', 'is_trade']
+2018-06-14 13:35:27,229 - CTR - INFO - load test_a dataset to test_a
+2018-06-14 13:35:27,606 - CTR - INFO - test_a data shape : (18371, 26)
+2018-06-14 13:35:27,606 - CTR - INFO - load test_b dataset to test_b
+2018-06-14 13:35:28,501 - CTR - INFO - test_b data shape : (42888, 26)
+2018-06-14 13:35:28,501 - CTR - INFO - concat test_a and test_b dataset to test
+2018-06-14 13:35:28,548 - CTR - INFO - test data shape : (61259, 26)
+2018-06-14 13:35:28,549 - CTR - INFO - ...Generate statistic maps start...
+2018-06-14 13:35:28,549 - CTR - INFO - hour_trade_rate
+2018-06-14 13:36:03,696 - CTR - INFO - gender_rate
+2018-06-14 13:36:03,752 - CTR - INFO - item_collected_level_count
+2018-06-14 13:36:39,485 - CTR - INFO - item_price_level_rate
+2018-06-14 13:36:39,536 - CTR - INFO - shop_star_rate
+2018-06-14 13:36:39,584 - CTR - INFO - ...Generate statistic maps done...
+2018-06-14 13:36:39,584 - CTR - INFO - ...Preprocess train dataset start...
+2018-06-14 13:36:42,323 - CTR - DEBUG - Split data by [1, 2, 3, 4, 5, 6] days.
+2018-06-14 13:37:17,679 - CTR - DEBUG - clean data of 1 th day.
+2018-06-14 13:37:17,680 - CTR - DEBUG - item count
+2018-06-14 13:37:17,793 - CTR - DEBUG - user count
+2018-06-14 13:37:17,992 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:18,805 - CTR - DEBUG - clean data of 2 th day.
+2018-06-14 13:37:18,805 - CTR - DEBUG - item count
+2018-06-14 13:37:18,907 - CTR - DEBUG - user count
+2018-06-14 13:37:19,056 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:19,706 - CTR - DEBUG - clean data of 3 th day.
+2018-06-14 13:37:19,706 - CTR - DEBUG - item count
+2018-06-14 13:37:19,804 - CTR - DEBUG - user count
+2018-06-14 13:37:19,953 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:20,620 - CTR - DEBUG - clean data of 4 th day.
+2018-06-14 13:37:20,620 - CTR - DEBUG - item count
+2018-06-14 13:37:20,724 - CTR - DEBUG - user count
+2018-06-14 13:37:20,899 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:21,578 - CTR - DEBUG - clean data of 5 th day.
+2018-06-14 13:37:21,578 - CTR - DEBUG - item count
+2018-06-14 13:37:21,679 - CTR - DEBUG - user count
+2018-06-14 13:37:21,817 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:22,470 - CTR - DEBUG - clean data of 6 th day.
+2018-06-14 13:37:22,471 - CTR - DEBUG - item count
+2018-06-14 13:37:22,561 - CTR - DEBUG - user count
+2018-06-14 13:37:22,692 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:25,470 - CTR - DEBUG - [Proc]item_category_list->category_0,category_1,category_2
+2018-06-14 13:37:26,445 - CTR - DEBUG - [Del]item_category_list,category_0
+2018-06-14 13:37:26,457 - CTR - DEBUG - [Proc]item_property_list->property_0,property_1,property_2
+2018-06-14 13:37:32,241 - CTR - DEBUG - [Del]item_property_list
+2018-06-14 13:37:32,739 - CTR - DEBUG - [Proc]predict_category_property->predict_category_0,predict_category_1,predict_category_2
+2018-06-14 13:37:35,196 - CTR - DEBUG - [Del]predict_category_property,predict_category_0
+2018-06-14 13:37:35,218 - CTR - DEBUG - [Proc]user_star_level->user_star_level_
+2018-06-14 13:37:35,462 - CTR - DEBUG - [Del]user_star_level
+2018-06-14 13:37:35,488 - CTR - DEBUG - [Del]shop_score_delivery,shop_score_description
+2018-06-14 13:37:35,498 - CTR - DEBUG - Drop empty shop review positive rate
+2018-06-14 13:37:36,295 - CTR - INFO - ...Preprocess train dataset done... 
+ train dataset shape : (420662, 40)
+2018-06-14 13:37:36,295 - CTR - INFO - train dataset features : 
+ ['instance_id', 'item_id', 'item_brand_id', 'item_city_id', 'item_sales_level', 'item_pv_level', 'user_id', 'user_age_level', 'user_occupation_id', 'context_page_id', 'shop_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'is_trade', 'time_', 'day', 'hour', 'min', 'dow', 'item_count', 'user_count', 'user_shop_count', 'user_shop_count_count', 'effe_th', 'hour_count', 'collected_level_count', 'item_price_rate', 'shop_star_rate', 'gender_trade_rate', 'len_item_category', 'len_item_property', 'category_1', 'category_2', 'property_0', 'property_1', 'property_2', 'len_predict_category_property', 'predict_category_0', 'user_star_level_']
+2018-06-14 13:37:36,342 - CTR - INFO - max train datetime : 2018-09-23 23:59:41
+2018-06-14 13:37:36,383 - CTR - INFO - min train datetime : 2018-09-18 00:00:01
+2018-06-14 13:37:36,383 - CTR - INFO - ...Preprocess test_a dataset start...
+2018-06-14 13:37:36,383 - CTR - DEBUG - Split data by [8] days.
+2018-06-14 13:37:37,735 - CTR - DEBUG - clean data of 8 th day.
+2018-06-14 13:37:37,735 - CTR - DEBUG - item count
+2018-06-14 13:37:37,768 - CTR - DEBUG - user count
+2018-06-14 13:37:37,805 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:38,143 - CTR - DEBUG - [Proc]item_category_list->category_0,category_1,category_2
+2018-06-14 13:37:38,196 - CTR - DEBUG - [Del]item_category_list,category_0
+2018-06-14 13:37:38,198 - CTR - DEBUG - [Proc]item_property_list->property_0,property_1,property_2
+2018-06-14 13:37:38,477 - CTR - DEBUG - [Del]item_property_list
+2018-06-14 13:37:38,500 - CTR - DEBUG - [Proc]predict_category_property->predict_category_0,predict_category_1,predict_category_2
+2018-06-14 13:37:38,659 - CTR - DEBUG - [Del]predict_category_property,predict_category_0
+2018-06-14 13:37:38,663 - CTR - DEBUG - [Proc]user_star_level->user_star_level_
+2018-06-14 13:37:38,674 - CTR - DEBUG - [Del]user_star_level
+2018-06-14 13:37:38,677 - CTR - DEBUG - [Del]shop_score_delivery,shop_score_description
+2018-06-14 13:37:38,679 - CTR - DEBUG - Drop empty shop review positive rate
+2018-06-14 13:37:38,719 - CTR - INFO - ...Preprocess test_a dataset done... 
+ test_a data shape : (18371, 39)
+2018-06-14 13:37:38,719 - CTR - INFO - ...Preprocess test_b dataset start...
+2018-06-14 13:37:38,719 - CTR - DEBUG - Split data by [8] days.
+2018-06-14 13:37:41,905 - CTR - DEBUG - clean data of 8 th day.
+2018-06-14 13:37:41,905 - CTR - DEBUG - item count
+2018-06-14 13:37:41,963 - CTR - DEBUG - user count
+2018-06-14 13:37:42,058 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:37:42,687 - CTR - DEBUG - [Proc]item_category_list->category_0,category_1,category_2
+2018-06-14 13:37:42,786 - CTR - DEBUG - [Del]item_category_list,category_0
+2018-06-14 13:37:42,789 - CTR - DEBUG - [Proc]item_property_list->property_0,property_1,property_2
+2018-06-14 13:37:43,473 - CTR - DEBUG - [Del]item_property_list
+2018-06-14 13:37:43,523 - CTR - DEBUG - [Proc]predict_category_property->predict_category_0,predict_category_1,predict_category_2
+2018-06-14 13:37:43,767 - CTR - DEBUG - [Del]predict_category_property,predict_category_0
+2018-06-14 13:37:43,771 - CTR - DEBUG - [Proc]user_star_level->user_star_level_
+2018-06-14 13:37:43,795 - CTR - DEBUG - [Del]user_star_level
+2018-06-14 13:37:43,799 - CTR - DEBUG - [Del]shop_score_delivery,shop_score_description
+2018-06-14 13:37:43,801 - CTR - DEBUG - Drop empty shop review positive rate
+2018-06-14 13:37:43,885 - CTR - INFO - ...Preprocess test_b dataset done... 
+ test_b data shape : (42888, 39)
+2018-06-14 13:37:43,885 - CTR - INFO - ...Preprocess val dataset start...
+2018-06-14 13:37:43,885 - CTR - DEBUG - Split data by [7] days.
+2018-06-14 13:38:19,385 - CTR - DEBUG - clean data of 7 th day.
+2018-06-14 13:38:19,385 - CTR - DEBUG - item count
+2018-06-14 13:38:19,490 - CTR - DEBUG - user count
+2018-06-14 13:38:19,626 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:38:20,653 - CTR - DEBUG - [Proc]item_category_list->category_0,category_1,category_2
+2018-06-14 13:38:20,789 - CTR - DEBUG - [Del]item_category_list,category_0
+2018-06-14 13:38:20,792 - CTR - DEBUG - [Proc]item_property_list->property_0,property_1,property_2
+2018-06-14 13:38:21,545 - CTR - DEBUG - [Del]item_property_list
+2018-06-14 13:38:21,614 - CTR - DEBUG - [Proc]predict_category_property->predict_category_0,predict_category_1,predict_category_2
+2018-06-14 13:38:21,925 - CTR - DEBUG - [Del]predict_category_property,predict_category_0
+2018-06-14 13:38:21,929 - CTR - DEBUG - [Proc]user_star_level->user_star_level_
+2018-06-14 13:38:21,962 - CTR - DEBUG - [Del]user_star_level
+2018-06-14 13:38:21,967 - CTR - DEBUG - [Del]shop_score_delivery,shop_score_description
+2018-06-14 13:38:21,969 - CTR - DEBUG - Drop empty shop review positive rate
+2018-06-14 13:38:22,080 - CTR - INFO - ...Preprocess val dataset done... 
+ val dataset shape : (57407, 40)
+2018-06-14 13:38:22,080 - CTR - INFO - ...Preprocess test dataset start...
+2018-06-14 13:38:22,080 - CTR - DEBUG - Split data by [8] days.
+2018-06-14 13:38:26,547 - CTR - DEBUG - clean data of 8 th day.
+2018-06-14 13:38:26,547 - CTR - DEBUG - item count
+2018-06-14 13:38:26,629 - CTR - DEBUG - user count
+2018-06-14 13:38:26,747 - CTR - DEBUG - [Add]user_shop_count,user_count_count_log
+2018-06-14 13:38:27,647 - CTR - DEBUG - [Proc]item_category_list->category_0,category_1,category_2
+2018-06-14 13:38:27,799 - CTR - DEBUG - [Del]item_category_list,category_0
+2018-06-14 13:38:27,802 - CTR - DEBUG - [Proc]item_property_list->property_0,property_1,property_2
+2018-06-14 13:38:28,746 - CTR - DEBUG - [Del]item_property_list
+2018-06-14 13:38:28,832 - CTR - DEBUG - [Proc]predict_category_property->predict_category_0,predict_category_1,predict_category_2
+2018-06-14 13:38:29,171 - CTR - DEBUG - [Del]predict_category_property,predict_category_0
+2018-06-14 13:38:29,175 - CTR - DEBUG - [Proc]user_star_level->user_star_level_
+2018-06-14 13:38:29,209 - CTR - DEBUG - [Del]user_star_level
+2018-06-14 13:38:29,214 - CTR - DEBUG - [Del]shop_score_delivery,shop_score_description
+2018-06-14 13:38:29,217 - CTR - DEBUG - Drop empty shop review positive rate
+2018-06-14 13:38:29,337 - CTR - INFO - ...Preprocess test dataset done... 
+ test dataset shape : (61259, 39)
+2018-06-14 13:38:29,337 - CTR - INFO - test dataset features : 
+ ['instance_id', 'item_id', 'item_brand_id', 'item_city_id', 'item_sales_level', 'item_pv_level', 'user_id', 'user_age_level', 'user_occupation_id', 'context_page_id', 'shop_id', 'shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'time_', 'day', 'hour', 'min', 'dow', 'item_count', 'user_count', 'user_shop_count', 'user_shop_count_count', 'effe_th', 'hour_count', 'collected_level_count', 'item_price_rate', 'shop_star_rate', 'gender_trade_rate', 'len_item_category', 'len_item_property', 'category_1', 'category_2', 'property_0', 'property_1', 'property_2', 'len_predict_category_property', 'predict_category_0', 'user_star_level_']
+2018-06-14 13:38:29,344 - CTR - INFO - max test datetime : 2018-09-25 23:59:51
+2018-06-14 13:38:29,351 - CTR - INFO - min test datetime : 2018-09-25 00:00:02
+2018-06-14 13:38:29,351 - CTR - INFO - Concat the test to all_data
+2018-06-14 13:38:30,244 - CTR - DEBUG - [Del]Drop features : ['hour', 'day', 'min']
+2018-06-14 13:38:30,439 - CTR - INFO - Concat extera feature to train, val, test
+2018-06-14 13:38:31,051 - CTR - INFO - ...Scalling data start...
+2018-06-14 13:38:31,432 - CTR - INFO - ...Scalling data done...
+2018-06-14 13:38:31,432 - CTR - INFO - 18 features : ['instance_id', 'item_id', 'item_brand_id', 'item_city_id', 'user_id', 'user_age_level', 'user_occupation_id', 'context_page_id', 'shop_id', 'is_trade', 'time_', 'effe_th', 'category_1', 'category_2', 'property_0', 'property_1', 'property_2', 'predict_category_0']
+2018-06-14 13:38:31,432 - CTR - INFO - [Del]is_trade, instance_id,time_
+2018-06-14 13:38:31,546 - CTR - INFO - Final there are 15 features
+2018-06-14 13:38:31,546 - CTR - INFO - ...Training start ...
+2018-06-14 13:38:31,546 - CTR - INFO - 
+ Categrical Features
+ ['item_id', 'item_brand_id', 'item_city_id', 'user_id', 'user_age_level', 'user_occupation_id', 'context_page_id', 'shop_id', 'effe_th', 'category_1', 'category_2', 'property_0', 'property_1', 'property_2', 'predict_category_0']
+2018-06-14 13:38:31,547 - CTR - INFO - 
+ Continual Values Features
+ ['shop_review_num_level', 'shop_review_positive_rate', 'shop_score_service', 'shop_star_rate', 'item_count', 'item_sales_level', 'item_pv_level', 'len_item_category', 'len_item_property', 'len_predict_category_property', 'collected_level_count', 'item_price_rate', 'user_count', 'user_star_level_', 'user_shop_count', 'user_shop_count_count', 'gender_trade_rate', 'dow', 'hour_count']
+2018-06-14 13:38:31,547 - CTR - INFO - ...Generate X_train, X_val, X_test_a start...
+2018-06-14 13:38:31,547 - CTR - INFO - ...Add categrical data start...
+2018-06-14 13:38:33,193 - CTR - INFO - feat : X_train, X_val, X_test ->  item_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:34,567 - CTR - INFO - feat : X_train, X_val, X_test ->  item_brand_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:35,892 - CTR - INFO - feat : X_train, X_val, X_test ->  item_city_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:40,348 - CTR - INFO - feat : X_train, X_val, X_test ->  user_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:41,371 - CTR - INFO - feat : X_train, X_val, X_test ->  user_age_level : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:42,379 - CTR - INFO - feat : X_train, X_val, X_test ->  user_occupation_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:43,523 - CTR - INFO - feat : X_train, X_val, X_test ->  context_page_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:44,941 - CTR - INFO - feat : X_train, X_val, X_test ->  shop_id : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:45,790 - CTR - INFO - feat : X_train, X_val, X_test ->  effe_th : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:47,248 - CTR - INFO - feat : X_train, X_val, X_test ->  category_1 : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:48,185 - CTR - INFO - feat : X_train, X_val, X_test ->  category_2 : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:49,566 - CTR - INFO - feat : X_train, X_val, X_test ->  property_0 : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:50,856 - CTR - INFO - feat : X_train, X_val, X_test ->  property_1 : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:52,181 - CTR - INFO - feat : X_train, X_val, X_test ->  property_2 : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:53,605 - CTR - INFO - feat : X_train, X_val, X_test ->  predict_category_0 : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:53,605 - CTR - INFO - ...Add categrical data end...
+2018-06-14 13:38:53,605 - CTR - INFO - ...Add continual data start...
+2018-06-14 13:38:53,606 - CTR - INFO - feat : X_train, X_val, X_test ->  shop_review_num_level : (420662, 15), (57407, 15), (61259, 15)
+2018-06-14 13:38:53,611 - CTR - INFO - feat : X_train, X_val, X_test ->  shop_review_positive_rate : (420662, 16), (57407, 16), (61259, 16)
+2018-06-14 13:38:53,616 - CTR - INFO - feat : X_train, X_val, X_test ->  shop_score_service : (420662, 17), (57407, 17), (61259, 17)
+2018-06-14 13:38:53,621 - CTR - INFO - feat : X_train, X_val, X_test ->  shop_star_rate : (420662, 18), (57407, 18), (61259, 18)
+2018-06-14 13:38:53,626 - CTR - INFO - feat : X_train, X_val, X_test ->  item_count : (420662, 19), (57407, 19), (61259, 19)
+2018-06-14 13:38:53,631 - CTR - INFO - feat : X_train, X_val, X_test ->  item_sales_level : (420662, 20), (57407, 20), (61259, 20)
+2018-06-14 13:38:53,635 - CTR - INFO - feat : X_train, X_val, X_test ->  item_pv_level : (420662, 21), (57407, 21), (61259, 21)
+2018-06-14 13:38:53,640 - CTR - INFO - feat : X_train, X_val, X_test ->  len_item_category : (420662, 22), (57407, 22), (61259, 22)
+2018-06-14 13:38:53,645 - CTR - INFO - feat : X_train, X_val, X_test ->  len_item_property : (420662, 23), (57407, 23), (61259, 23)
+2018-06-14 13:38:53,650 - CTR - INFO - feat : X_train, X_val, X_test ->  len_predict_category_property : (420662, 24), (57407, 24), (61259, 24)
+2018-06-14 13:38:53,654 - CTR - INFO - feat : X_train, X_val, X_test ->  collected_level_count : (420662, 25), (57407, 25), (61259, 25)
+2018-06-14 13:38:53,659 - CTR - INFO - feat : X_train, X_val, X_test ->  item_price_rate : (420662, 26), (57407, 26), (61259, 26)
+2018-06-14 13:38:53,664 - CTR - INFO - feat : X_train, X_val, X_test ->  user_count : (420662, 27), (57407, 27), (61259, 27)
+2018-06-14 13:38:53,668 - CTR - INFO - feat : X_train, X_val, X_test ->  user_star_level_ : (420662, 28), (57407, 28), (61259, 28)
+2018-06-14 13:38:53,673 - CTR - INFO - feat : X_train, X_val, X_test ->  user_shop_count : (420662, 29), (57407, 29), (61259, 29)
+2018-06-14 13:38:53,677 - CTR - INFO - feat : X_train, X_val, X_test ->  user_shop_count_count : (420662, 30), (57407, 30), (61259, 30)
+2018-06-14 13:38:53,683 - CTR - INFO - feat : X_train, X_val, X_test ->  gender_trade_rate : (420662, 31), (57407, 31), (61259, 31)
+2018-06-14 13:38:53,688 - CTR - INFO - feat : X_train, X_val, X_test ->  dow : (420662, 32), (57407, 32), (61259, 32)
+2018-06-14 13:38:53,693 - CTR - INFO - feat : X_train, X_val, X_test ->  hour_count : (420662, 33), (57407, 33), (61259, 33)
+2018-06-14 13:38:53,697 - CTR - INFO - ...Add continual data end...
+2018-06-14 13:38:53,697 - CTR - INFO - ...Lightgbm modeling start...
+2018-06-14 13:40:21,392 - CTR - INFO - ...Lightgbm modeling end...
+2018-06-14 13:40:21,392 - CTR - INFO - <bound method LGBMModel.get_params of LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=0.8,
+        learning_rate=0.01, max_depth=8, min_child_samples=20,
+        min_child_weight=0.001, min_split_gain=0.0, n_estimators=20000,
+        n_jobs=-1, num_leaves=35, objective='binary', random_state=None,
+        reg_alpha=0.0, reg_lambda=0.0, seed=0, silent=True, subsample=0.9,
+        subsample_for_bin=200000, subsample_freq=1)>
+2018-06-14 13:40:21,394 - CTR - INFO - Start predicting...
+2018-06-14 13:40:24,785 - CTR - INFO - log_loss : 0.08185521864603287
+2018-06-14 13:40:24,787 - CTR - INFO - 
+feature count:34
+feature importance 
+hour_count                       3599
+shop_score_service               2897
+user_id                          2685
+user_count                       2320
+item_sales_level                 2295
+len_item_property                2063
+item_id                          1788
+user_age_level                   1782
+collected_level_count            1735
+item_count                       1721
+shop_id                          1655
+item_brand_id                    1595
+predict_category_0               1512
+shop_review_positive_rate        1476
+category_1                       1465
+item_city_id                     1387
+item_price_rate                  1364
+shop_review_num_level            1183
+context_page_id                  1096
+len_predict_category_property    1038
+property_2                        816
+property_1                        803
+item_pv_level                     717
+shop_star_rate                    694
+property_0                        538
+user_star_level_                  529
+gender_trade_rate                 470
+user_occupation_id                454
+dow                               443
+user_shop_count_count             373
+user_shop_count                   177
+category_2                        132
+effe_th                           114
+len_item_category                  26
+dtype: int32 
+2018-06-14 13:41:50,481 - CTR - INFO - ...Lightgbm modeling end...
+2018-06-14 13:41:50,481 - CTR - INFO - <bound method LGBMModel.get_params of LGBMClassifier(boosting_type='gbdt', class_weight=None, colsample_bytree=0.8,
+        learning_rate=0.01, max_depth=8, min_child_samples=20,
+        min_child_weight=0.001, min_split_gain=0.0, n_estimators=1263,
+        n_jobs=-1, num_leaves=35, objective='binary', random_state=None,
+        reg_alpha=0.0, reg_lambda=0.0, seed=0, silent=True, subsample=0.9,
+        subsample_for_bin=200000, subsample_freq=1)>
+2018-06-14 13:41:50,482 - CTR - INFO - Start predicting...
+2018-06-14 13:41:54,244 - CTR - INFO - 
+      本次结果:0.081855
+      ALL_DAY:[1, 2, 3, 4, 5, 6, 7]
+      TRAIN_DAY:[1, 2, 3, 4, 5, 6]
+      VAL_DAY:[7]
+      TEST_DAY:[8]
+
+      ---
+      添加了三个特征
+      'len_item_category','len_item_property','len_predict_category_property'
+      加了之后结果更差了
+      ---
+      降维，去掉one-hot，折腾吧。
+      去掉one_hot之后就36个特征了
+      ---
+      调整了一下参数，然后到0.081805感觉妥妥的过拟合了
+      去掉了context_id，但是context相关的特征我好像又没怎么用
+     
